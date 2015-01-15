@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <title>jQuery Mobile Menu</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/site-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="../jquery.mobile-menu.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.min.js"></script>
+          <script src="js/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+    <div id="overlay"></div>
+    <div id="page">
+        <div class="container">
+            <header>
+                <a href="http://www.pixelademo.com/"><img class="logo" src="images/pixelademo.png" title="Pixel A Demo" alt="Pixel A Demo"></a>
+            </header>            
+        </div>
+        <div class="mm-toggle-wrap">
+            <div class="mm-toggle">
+                <i class="icon-menu"></i><span class="mm-label">Menu</span>
+            </div>            
+        </div>
+        <div class="container">
+            <h2>jQuery Mobile Menu V1.0</h2>
+            <p class="browser-size">
+                <h3  class="browser-size" style="color: blue">Resize your browser to 767 pixel or less.</h3>
+            </p>
+            <p>
+                <h3>Features</h3>
+                <ul>
+                    <li>Multi-level menu support (3 levels max)</li>
+                    <li>Flexible, lightweight and easy to setup</li>
+                    <li>Cross-browser compatibility</li>
+                    <li>Very clean corporate style</li>
+                </ul>
+            </p>
+            <p>
+                <h3>More Examples</h3>
+				<div class="option-wrap">
+                PagePush: <a class="options" href="index.html">true</a> <a class="options" href="overlay.html">false</a> </div>
+				<div class="option-wrap">
+                FromLeft: <a class="options" href="index.html">true</a> <a class="options" href="right.html">false</a> </div>
+				<div class="option-wrap">
+                Overlay: <a class="options" href="index.html">true</a> <a class="options" href="overlayNo.html">false</a> </div>
+				<div class="option-wrap">
+                CollapseMenu: <a class="options" href="index.html">true</a> <a class="options" href="collapseNo.html">false</a> </div>
+			</p>	
+                <h3>Usage</h3>
+                <h4>Include the CSS & JS</h4>
+                <p>jquery.mobile-menu.css can be modified to fit website design</p> 
+            <pre>
+&lt;link rel="stylesheet" href="jquery.mobile-menu.css" /&gt;
+&lt;script src="jquery.mobile-menu.min.js"&gt;&lt;/script&gt;
+            </pre>
+        <h3>Menu Markup</h3>
+        <pre>
+&lt;div id="mobile-menu"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#"&gt;item 1&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;sub item 1a&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;sub item 1b&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;sub item 1c&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;item 3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;item 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+        </pre>
+        <h3>Initialize</h3>
+        <pre>
+&lt;script&gt;
+	jQuery(document).ready(function($){		
+		$("#mobile-menu").mobileMenu({
+			MenuWidth: 250,
+			SlideSpeed : 300,
+			WindowsMaxWidth : 767,
+			PagePush : true,
+			FromLeft : true,
+			Overlay : true,
+			CollapseMenu : true,
+			ClassName : "mobile-menu"
+		});
+	});        
+&lt;/script&gt;
+        </pre>
+        <h3>Options</h3>
+        <pre>
+MenuWidth : 250, // menu width, default to 250px
+SlideSpeed: 300, // slide in speed, default to 300ms
+WindowsMaxWidth: 767, // Max window width to display menu, default to 767px. When change this, be sure to the media query in jquery.mobile-menu.css file
+PagePush: true, // default true for push menu, false for overlay
+FromLeft: true, // default true for slide in from left, false for right
+Overlay: true, // default true for darken the page, false no overlay
+CollapseMenu : true, // default true, menu will not collapse when false
+ClassName : "mobile-menu" // if changed, please change jquery.mobile-menu.css file to your class name
+        </pre>
+        <h3>Requirement</h3>
+        jQuery v1.11.1
+        <h3>Browser Support</h3>
+        <ul>
+            <li>Chrome</li>
+            <li>Firefox</li>
+            <li>Safari</li>
+            <li>Opera</li>
+            <li>IE8+</li>
+            <li>Android Browser</li>
+            <li>iOS Safari</li>
+        </ul>
+        
+        </div>
+    </div>
+    <div id="mobile-menu">
+            <ul>
+                <li>
+                    <div class="mm-search">
+                        <form id="search" name="search">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="icon-search"></i></button>
+                                </div>
+                                <input type="text" class="form-control simple" placeholder="Search ..." name="srch-term" id="srch-term">
+                                
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <div class="home">
+                        <a href="#"><i class="icon-home"></i>Home</a>
+                    </div>                    
+                </li>                
+                <li><a href="#">About Us</a> 
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Company</a></li>
+                        <li><a href="#">Our Visions</a></li>
+                        <li><a href="#">Our Values</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">History</a></li>   
+                        <li><a href="#">Events</a>
+                            <ul>
+                                <li><a href="#">Event 1</a></li>
+                                <li><a href="#">Event 2</a></li>
+                                <li><a href="#">Event 3</a></li>
+                                <li><a href="#">Event 4</a></li>
+                            </ul>                            
+                        </li>                                              
+                    </ul>
+                </li>
+                <li><a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Services A</a>
+                            <ul>
+                                <li><a href="#">Services A Item 1</a></li>
+                                <li><a href="#">Services A Item 2</a></li>
+                                <li><a href="#">Services A Item 3</a></li>
+                                <li><a href="#">Services A Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Services B</a>
+                            <ul>
+                                <li><a href="#">Services B Item 1</a></li>
+                                <li><a href="#">Services B Item 2</a></li>
+                                <li><a href="#">Services B Item 3</a></li>
+                                <li><a href="#">Services B Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Services C</a>
+                            <ul>
+                                <li><a href="#">Services C Item 1</a></li>
+                                <li><a href="#">Services C Item 2</a></li>
+                                <li><a href="#">Services C Item 3</a></li>
+                                <li><a href="#">Services C Item 4</a></li>
+                                <li><a href="#">Services C Item 5</a></li>
+                                <li><a href="#">Services C Item 6</a></li>
+                                <li><a href="#">Services C Item 7</a></li>
+                                <li><a href="#">Services C Item 8</a></li>
+                                <li><a href="#">Services C Item 9</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Services D</a>
+                            <ul>
+                                <li><a href="#">Services D</a></li>
+                                <li><a href="#">Services D Item 1</a></li>
+                                <li><a href="#">Services D Item 2</a></li>
+                                <li><a href="#">Services D Item 3</a></li>
+                                <li><a href="#">Services D Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Services E</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Products</a>
+                    <ul>                        
+                        <li><a href="#">Products Cat A</a></li>
+                        <li><a href="#">Products Cat B</a></li>
+                        <li><a href="#">Products Cat C</a></li>
+                        <li><a href="#">Products Cat D</a></li>
+                        <li><a href="#">Products Cat E</a></li>
+                        <li><a href="#">Products Cat F</a>
+                            <ul>
+                                <li><a href="#">Products Cat F Item 1</a></li>
+                                <li><a href="#">Products Cat F Item 2</a></li>
+                                <li><a href="#">Products Cat F Item 3</a></li>
+                                <li><a href="#">Products Cat F Item 4</a></li>
+                                <li><a href="#">Products Cat F Item 5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Products Cat G</a>
+                            <ul>
+                                <li><a href="#">Products Cat G Item 1</a></li>
+                                <li><a href="#">Products Cat G Item 2</a></li>
+                                <li><a href="#">Products Cat G Item 3</a></li>
+                                <li><a href="#">Products Cat G Item 4</a></li>
+                                <li><a href="#">Products Cat G Item 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Our Clients</a>
+                    <ul>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                        <li><a href="#">Clients ABC</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Locations</a>
+                    <ul>
+                        <li><a href="#">West Coast</a>
+                            <ul>
+                                <li><a href="#">West Coast 1</a></li>
+                                <li><a href="#">West Coast 2</a></li>
+                                <li><a href="#">West Coast 3</a></li>
+                                <li><a href="#">West Coast 4</a></li>
+                                <li><a href="#">West Coast 5</a></li>
+                                <li><a href="#">West Coast 6</a></li>
+                                <li><a href="#">West Coast 7</a></li>
+                                <li><a href="#">West Coast 8</a></li>
+                                <li><a href="#">West Coast 9</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Central</a>
+                            <ul>
+                                <li><a href="#">Central 1</a></li>
+                                <li><a href="#">Central 2</a></li>
+                                <li><a href="#">Central 3</a></li>
+                                <li><a href="#">Central 4</a></li>
+                                <li><a href="#">Central 5</a></li>
+                                <li><a href="#">Central 6</a></li>
+                                <li><a href="#">Central 7</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">East Coast</a>
+                            <ul>
+                                <li><a href="#">East Coast 1</a></li>
+                                <li><a href="#">East Coast 2</a></li>
+                                <li><a href="#">East Coast 3</a></li>
+                                <li><a href="#">East Coast 4</a></li>
+                                <li><a href="#">East Coast 5</a></li>
+                                <li><a href="#">East Coast 6</a></li>
+                                <li><a href="#">East Coast 7</a></li>
+                                <li><a href="#">East Coast 8</a></li>
+                                <li><a href="#">East Coast 9</a></li>
+                                <li><a href="#">East Coast 10</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Careers</a>
+                    <ul>
+                        <li><a href="#">Professionals</a>
+                            <ul>
+                                <li><a href="#">Professionals</a></li>
+                                <li><a href="#">Professionals</a></li>
+                                <li><a href="#">Professionals</a></li>
+                                <li><a href="#">Professionals</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Students</a>
+                            <ul>
+                                <li><a href="#">Students</a></li>
+                                <li><a href="#">Students</a></li>
+                                <li><a href="#">Students</a></li>
+                                <li><a href="#">Students</a></li>
+                                <li><a href="#">Students</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact Us</a>
+                    <ul>
+                        <li><a href="#">Contact Us 2</a>
+                        </li>
+                        <li><a href="#">Contact Us 2</a>
+                        </li>
+                        <li><a href="#">Store Locator</a>
+                        </li>
+                        <li><a href="#">Global Networks</a>
+                        </li>
+                        <li><a href="#">Social Media</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Blog</a></li> 
+                <li>
+                    <div class="social">
+                        <a href="#" title="Follow Us on LinkedIn"><i class="icon-linkedin-squared"></i></a>
+                        <a href="#" title="Follow Us on Facebook"><i class="icon-facebook-squared"></i></a>
+                        <a href="#" title="Follow Us on Twitter"><i class="icon-twitter-squared"></i></a>
+                        <a href="#" title="Follow Us on Google+"><i class="icon-gplus-squared"></i></a>
+                        <a href="#" title="Follow Us on Youtube"><i class="icon-youtube-play"></i></a>
+                    </div>
+                </li>
+            </ul>
+    </div> <!-- /#rmm   -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="../jquery.mobile-menu.min.js"></script>    
+    <script>
+        jQuery(document).ready(function($){		
+            $("#mobile-menu").mobileMenu({
+                MenuWidth: 250,
+                SlideSpeed : 300,
+                WindowsMaxWidth : 767,
+                PagePush : true,
+                FromLeft : true,
+                Overlay : false,
+                CollapseMenu : true,
+                ClassName : "mobile-menu"
+            });
+        });        
+    </script>
+
+    
+</body>
+
+</html>
